@@ -1,16 +1,212 @@
 
+$colYellow:#fff200;
+$colBlueStr:#0054A6;
+$colYellowFull:#FFFC00;
+$colBlueFull:#0816FF;
+$paddingMainSection:1em 1.6em;
 body{
-  background-color: #233D4D;
+
+  // small text
+  font-family: 'Ubuntu', sans-serif;
+  h1,
+  h2,
+  h3{
+  // BIG text
+  font-family: 'Oswald', sans-serif;
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
 
 .wrapper{
-  max-width: 80rem;
+  max-width: 90rem;
   width: 80%;
   margin: 1em auto;
-  h2{
-    color: #fff;
-    font-size: 6em;
-    border: 3px solid;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "top_s"
+  "nav_s"
+  "slide_s"
+  "main_s"
+  "foot_s"
+  "bott_s" ;
+   .box{
+     border: 3px solid   ;
+     background-color: #564646;
+   }
+   //+++++++++++++++++++++++++++++++++++++++++++++
+  .top-section{
+    grid-area: top_s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:$paddingMainSection;
+    background-color: $colBlueStr;
+    border-bottom: 2px solid #fff;
+    .social{
+      display: grid;
+      grid-template-columns:1fr 1fr 1fr ;
+      grid-gap: 5px;
+      a{
+        // &:hover img{
+        // background-color:$colYellow;
+        // }
+      }
+    }
+    .call{
+      a{
+        color:$colYellow;
+        transition: .5s;
+        &:hover{
+          color: #fff;
+        }
+      }
+    }
+    .getbutt{
+      a{
+      // border: 1px solid;
+      border-radius: 10px;
+      padding: .5em .8em;
+      background-color: $colYellow;
+      color:$colBlueStr;
+      font-weight: bold;
+      transition: 1s;
+      &:hover{
+        background-color: $colYellowFull;
+        color: red;
+      }
+      }
+    }
+  }
+  //+++++++++++++++++++++++++++++++++++++++++++++
+  .nav-section{
+      grid-area: nav_s;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      padding:.5em 1.6em;
+      background-color: $colBlueStr;
+      .logo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-basis: 50%;
+        a{
+          img{
+            display: block;
+            width: 100%;
+          }
+        }
+        .nav-toggle {
+              font-size: 2.2em;
+              font-weight: bold;
+              padding: .5em;
+              cursor: pointer;
+              display: none;
+              color: $colYellow;
+            }
+      }
+    .responsive-nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      li{
+        text-align: center;
+        // flex-basis: 20%;
+        a{
+          display: block;
+          font-size: 1em;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-weight: bold;
+          padding: 1.2em;
+          color: #fff;
+          transition:   border-bottom-color 1s;
+          position: relative;
+          &::before{
+            content: '';
+            background-color:  $colYellow;
+            height: 5px;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom:  0;
+            width: 0%;
+            transition: all ease-in-out 250ms;
+          }
+          &hover::before{
+            width: 100%;
+          }
+        }
+      }
+     .actClass {
+        border-bottom-width: 5px  ;
+        border-bottom-style: solid;
+        border-bottom-color: $colYellow;
+        color: $colYellow;
+
+        &:hover{
+          border-bottom-width: 0 ;
+        }
+      }
+    }
+  }
+  //+++++++++++++++++++++++++++++++++++++++++++++
+
+  .slide-section{
+    grid-area: slide_s;
+  }
+  //+++++++++++++++++++++++++++++++++++++++++++++
+
+  .main-section{
+    grid-area: main_s;
+  }
+  //+++++++++++++++++++++++++++++++++++++++++++++
+
+  .footer-section{
+    grid-area: foot_s;
+  }
+  //+++++++++++++++++++++++++++++++++++++++++++++
+
+  .bottom-section{
+    grid-area:bott_s;
+  }
+
+} //wraper end
+} // body end;
+
+
+//MEDIA
+@media only screen and (max-width: 769px) {
+  .nav-section{
+    flex-wrap: wrap;
+      .logo{
+        flex-basis: 100%;
+        .nav-toggle {
+          display: block;
+        }
+      }
+      .responsive-nav {
+          display: none;
+          position: absolute;
+          width: 100%;
+          top: 4.5rem;
+          border-radius: 10px;
+        }
 
   }
-}
+  .show {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, .6);
+    li{
+      width: 100%;
+    }
+  }
 }
