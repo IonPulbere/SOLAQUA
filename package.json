@@ -1,0 +1,26 @@
+{
+  "name": "projectone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass --include-path scss scss/main.scss build/css/style.min.css",
+    "build-js": "browserify js/my.js>build/js/script.min.js",
+    "build-uglify": "uglifyjs --output build/js/script.uglify.js build/js/script.min.js",
+    "build-css-clean": "cleancss -o build/css/style.min.clean.css build/css/style.min.css",
+    "build": "npm run build-css && npm run build-js && npm run build-uglify && npm run build-css-clean",
+    "start": "nodemon -e js,scss -x \"npm run build\" --ignore build/"
+  },
+  "keywords": [],
+  "author": "Ion Pulbere",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "node-sass": "^4.9.1",
+    "nodemon": "^1.17.5",
+    "uglify-js": "^3.4.3"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "description": ""
+}
