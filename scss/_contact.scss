@@ -1,0 +1,195 @@
+$colYellow:#fff200;
+$colBlueStr:#0054A6;
+$colYellowFull:#FFFC00;
+$colBlueFull:#0816FF;
+$colWhite:#fff;
+$colorbgPN:#f5f2f2;
+$boxShadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$borderHelp:1px solid $colBlueFull;
+.c-main{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap: 1em;
+      grid-template-areas:
+      "i d"
+      "f m" ;
+
+  .c-img{
+    grid-area:i;
+    // border:$borderHelp ;
+    img {
+      width: 100%;
+      box-shadow: $boxShadow;
+
+    }
+
+  }
+  .c-details{
+    grid-area: d;
+    // box-shadow: $boxShadow;
+
+    // border: $borderHelp ;
+    padding: 0 1em;
+    p{
+
+      a{
+        color: $colBlueStr;
+      }
+    }
+
+
+  }
+ .cc-form{
+    grid-area:f;
+    // box-shadow: $boxShadow;
+
+    // border: $borderHelp ;
+    // background-color: #0f0;
+    form{
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns:1fr 1fr 1fr;
+      grid-gap:.5em;
+      grid-template-areas:
+      'n t e'
+      'm m m'
+      '. s .';
+      position: relative ;
+      input[type='text']{
+        grid-area: n;
+      }
+      input[type='tel']{
+        grid-area:t;
+      }
+      input[type='email']{
+        grid-area:e;
+      }
+      textarea{
+        grid-area:m;
+      }
+      button{
+        grid-area:s;
+      }
+      .f-item{
+        width: 100%;
+        line-height: 2;
+        padding-left: .5em;
+        background-color: $colBlueStr;
+        color: $colWhite;
+        &::placeholder{
+          color: $colWhite;
+        }
+      }
+      button{
+        // width: 5em;
+        cursor: pointer;
+        outline: none;
+        position: relative;
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.4) inset;
+        transition: 1s;
+        border-radius: 10px;
+        padding: .8em 1em;
+        background-color: $colYellow;
+        color: $colBlueStr;
+        font-weight: bold;
+        &:hover{
+          background-color: $colWhite;
+        }
+        &::before,
+        &::after{
+          content:"";
+          position:absolute;
+          z-index:-1;
+          -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+          -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+          box-shadow:0 0 20px rgba(0,0,0,0.8);
+          top:0;
+          bottom:0;
+          left:10px;
+          right:10px;
+          -moz-border-radius:100px / 10px;
+          border-radius:100px / 10px;
+        }
+        &::after{
+          right:10px;
+          left:auto;
+          -webkit-transform:skew(8deg) rotate(3deg);
+             -moz-transform:skew(8deg) rotate(3deg);
+              -ms-transform:skew(8deg) rotate(3deg);
+               -o-transform:skew(8deg) rotate(3deg);
+                  transform:skew(8deg) rotate(3deg);
+        }
+      }
+      .contactNotifDiv{
+        color: yellow;
+        position: absolute;
+        z-index: 100;
+        font-size: 1.2em;
+        font-weight: bold;
+        background-color: #000;
+        padding:10px;
+        padding-left: 30px;
+        // border-radius: 5px;
+        right: 0;
+        bottom:8%;
+        width: 100%;
+        height: 20%;
+        text-align: center;
+        /*  add abackgroud sign*/
+        background-image: url('../img/alert-icon.png');
+        background-size: 3em;
+        background-position: 5px 10px;
+        background-repeat: no-repeat;
+        -webkit-animation:forvalidate 2s;
+        animation: forvalidate 2s  forwards;
+
+      }
+    } //form
+  } //c-form
+  .c-map{
+    grid-area:m;
+    box-shadow: $boxShadow;
+
+    // width: 500px;
+    // height: 20rem;
+    // border: $borderHelp;
+
+  }
+} //main
+
+
+@media only screen and (max-width : 1000px) {
+  .c-main{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "i"
+        "d"
+        "f"
+        "m" ;
+
+  }
+  .c-map{
+    height: 20rem;
+
+  }
+}
+@media only screen and (max-width : 650px) {
+  .c-main{
+          .cc-form{
+           form{
+             grid-template-columns:1fr;
+             grid-template-areas:
+             'n'
+             't'
+             'e'
+             'm'
+             's';
+      }
+    }
+    .c-details{
+      text-align: center;
+    }
+  }
+
+}

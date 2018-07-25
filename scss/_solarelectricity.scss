@@ -1,0 +1,111 @@
+$padding01: 0 1em;
+$colBlueStr:#0054A6;
+$colYellow:#fff200;
+$colYellowFull:#FFFC00;
+$colBlueFull:#0816FF;
+$colWhite:#fff;
+$colorbgPN:#f5f2f2;
+.main-section {
+  //++++++++++++++++++++++++++++++++++s-solar-electric
+  .s-solar-electric{
+    text-align: center;
+    margin-bottom:  1.5em;
+    .a-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom:  2em;
+
+      .a-list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1em;
+
+        img {
+          width: 100%;
+          flex: 0;
+        }
+
+        .a-text-area {
+          margin: 0;
+          padding: $padding01;
+          flex: 1;
+          text-align: left;
+        }
+        h2{
+          color: $colBlueStr;
+        }
+      }
+
+      .a-ord {
+        .a-text-area {
+          order: -1;
+          text-align: right;
+        }
+      }
+    }
+    a{
+      // border: 1px solid $colBlueStr;
+      color: $colBlueStr;
+      background-color: $colYellow;
+      font-weight: bold;
+      border-radius: 10px;
+      padding: 1em 2em;
+      transition: 1s;
+      box-shadow:0 1px 4px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.4) inset;
+      position: relative;
+      &:hover{
+        color: $colWhite;
+      background-color: $colBlueStr;
+
+      }
+      &::before,
+      &::after{
+        content:"";
+        position:absolute;
+        z-index:-1;
+        -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+        -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+        box-shadow:0 0 20px rgba(0,0,0,0.8);
+        top:0;
+        bottom:0;
+        left:10px;
+        right:10px;
+        -moz-border-radius:100px / 10px;
+        border-radius:100px / 10px;
+      }
+      &::after{
+        right:10px;
+        left:auto;
+        -webkit-transform:skew(8deg) rotate(3deg);
+           -moz-transform:skew(8deg) rotate(3deg);
+            -ms-transform:skew(8deg) rotate(3deg);
+             -o-transform:skew(8deg) rotate(3deg);
+                transform:skew(8deg) rotate(3deg);
+      }
+    }
+  }
+}
+// main end
+@media only screen and (max-width : 1025px) {
+  .main-section {
+      .s-solar-electric{
+      .a-list {
+        .a-list-item {
+          flex-direction: column;
+
+          .a-text-area {
+            padding: 0;
+            order: -1;
+            text-align: center;
+
+            p {
+              text-align: justify;
+            }
+          }
+        }
+      }
+    }
+  }
+}
