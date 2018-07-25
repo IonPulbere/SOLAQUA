@@ -507,7 +507,7 @@ template {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 1em;
-  grid-template-areas: "i d" "f m"; }
+  grid-template-areas: "i d" "f m"; }
   .c-main .c-img {
     grid-area: i; }
     .c-main .c-img img {
@@ -525,7 +525,7 @@ template {
       grid-template-rows: auto;
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: .5em;
-      grid-template-areas: 'n t e' 'm m m' '. s .';
+      grid-template-areas: 'n t e' 'm m m' '. s .';
       position: relative; }
       .c-main .cc-form form input[type='text'] {
         grid-area: n; }
@@ -607,18 +607,19 @@ template {
 @media only screen and (max-width: 1000px) {
   .c-main {
     grid-template-columns: 1fr;
-    grid-template-areas: "i" "d" "f" "m"; }
+    grid-template-areas: "i" "d" "f" "m"; }
   .c-map {
     height: 20rem; } }
 
 @media only screen and (max-width: 650px) {
   .c-main .cc-form form {
     grid-template-columns: 1fr;
-    grid-template-areas: 'n' 't' 'e' 'm' 's'; }
+    grid-template-areas: 'n' 't' 'e' 'm' 's'; }
   .c-main .c-details {
     text-align: center; } }
 
 body {
+  position: relative;
   background-color: #fff;
   font-family: 'Ubuntu', sans-serif; }
   body h1,
@@ -1129,6 +1130,55 @@ body {
         right: 0;
         left: 0;
         margin: auto; }
+  body .blurMe {
+    filter: blur(5px);
+    -webkit-filter: blur(5px); }
+  body .dispno {
+    display: none; }
+  body .dispme {
+    display: block !important; }
+  body .cookie-main-wrap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #323232;
+    color: #fff;
+    padding: 1em; }
+    body .cookie-main-wrap .cookie-class {
+      max-width: 90rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center; }
+      body .cookie-main-wrap .cookie-class h2 {
+        flex-shrink: 1;
+        letter-spacing: .2em; }
+      body .cookie-main-wrap .cookie-class p {
+        flex-shrink: 2; }
+        body .cookie-main-wrap .cookie-class p a {
+          color: #fff200; }
+          body .cookie-main-wrap .cookie-class p a:hover {
+            color: #FFFC00; }
+      body .cookie-main-wrap .cookie-class .cookie-links {
+        flex-shrink: 0; }
+        body .cookie-main-wrap .cookie-class .cookie-links a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #fff200;
+          transition: 1s; }
+          body .cookie-main-wrap .cookie-class .cookie-links a p {
+            padding-left: .7em; }
+          body .cookie-main-wrap .cookie-class .cookie-links a:hover {
+            color: #FFFC00; }
+        body .cookie-main-wrap .cookie-class .cookie-links .agree p {
+          font-size: 1.2em;
+          font-weight: bold; }
+        body .cookie-main-wrap .cookie-class .cookie-links .agree:hover {
+          text-decoration: underline; }
+        body .cookie-main-wrap .cookie-class .cookie-links .decline:hover {
+          text-decoration: line-through; }
 
 @media only screen and (max-width: 1540px) {
   .slide-section .slideshow-container .actionButt {
@@ -1180,7 +1230,9 @@ body {
     left: 30% !important;
     width: 50% !important; }
   .slide-section .slideshow-container .dots {
-    bottom: 5em !important; } }
+    bottom: 5em !important; }
+  .cookie-main-wrap .cookie-class {
+    flex-direction: column; } }
 
 @media only screen and (max-width: 900px) {
   .slide-section .slideshow-container .mySlides .addText {

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper" id="wrap-id">
     <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++top-section begin -->
     <header class="top-section ">
       <div class="wp2">
@@ -272,20 +272,31 @@
       </a>
     </div>
   </div>
-  <script src="./js/script.uglify.js">
-  </script>
+  <script src="./js/script.uglify.js">  </script>
   <!-- to make cookies to work -->
-  <script src="./js/jquery.js"> </script>
-  <script src="./js/jquery-cookie.js"> </script>
-  <script src="./js/cookie-policy.js"> </script>
+  <!-- <script src="./js/jquery.js"> </script> -->
+  <!-- <script src="./js/jquery-cookie.js"> </script> -->
+  <!-- <script src="./js/cookie-policy.js"> </script> -->
 
   <!-- <script src="./js/test.js"> </script> -->
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4We3lNk83xzwvGqJ80eeHPfhjT-Jr6Yc&callback=myMap"></script> -->
 
   <!-- <script src="./js/tt.js"> </script> -->
-
-
-
+    <div class="cookie-main-wrap" id="cookie-main-wrap">
+    <div class="cookie-class">
+      <h2>Let us know you agree to cookies</h2>
+      <p> We use <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a> to give you the best online experience.
+          Please let us know if you agree to all of these cookies.</p>
+          <div class="cookie-links">
+              <a href="#" class="agree" id="a-agree">
+                <img src="img/agree.png" alt="agree icon">
+                <p>YES, I agree</p> </a>
+              <a href="#" class="decline" id="a-decline">
+                <img src="img/decline.png" alt="deline icon">
+              <p>No, thank you</p>  </a>
+          </div>
+    </div>
+</div>
 </body>
 
 </html>
