@@ -47,12 +47,18 @@ $(function() { //begin
     if (user!="" && location!="") {
       console.log('cookies exist');
       var me= document.getElementById("cookie-main-wrap");
-      me.className="dispno";
+      if (me) {
+        me.className="dispno";
+      }
+
 
     }else{
       console.log("we need do create Cookies");
       var elem= document.getElementById("wrap-id");
-      elem.className+=" blurMe";
+      if (elem) {
+        elem.className+=" blurMe";
+      }
+
 
 
     }
@@ -61,6 +67,9 @@ $(function() { //begin
   checkCookie();
   // accept cookies
   var aAgree= document.getElementById("a-agree");
+  if (aAgree) {
+
+
   aAgree.addEventListener('click',function(e){
     e.preventDefault();
     createCookie("username","ionel",1); //create cookie 2
@@ -71,8 +80,12 @@ $(function() { //begin
     me.className="dispno";
     wrEl.className="wrapper";
   },false);
+  }
 //decline cookies
   var aDecline= document.getElementById("a-decline");
+  if (aDecline) {
+
+
   aDecline.addEventListener('click',function(e){
     e.preventDefault();
     var wrEl= document.getElementById("wrap-id");
@@ -80,7 +93,7 @@ $(function() { //begin
     me.className="dispno";
     wrEl.className="wrapper";
   },false);
-
+}
   // var yy=getCookie();
   // console.log(yy);
   // // ---------------------------------------------------------------Create Cookies
